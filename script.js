@@ -1,75 +1,64 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-  /* =====================================================
-     PROGRESS BAR
-  ===================================================== */
-
+  // Progress bar
   const progress = document.getElementById("progress");
 
   function updateProgress() {
-
     if (!progress) return;
 
-    const scrollTop = window.scrollY;
-
-    const documentHeight =
+    const total =
       document.documentElement.scrollHeight -
       window.innerHeight;
 
-    if (documentHeight <= 0) return;
+    const current = window.scrollY;
 
-    const percentage =
-      (scrollTop / documentHeight) * 100;
+    if (total <= 0) return;
 
-    progress.style.width = `${percentage}%`;
+    progress.style.width =
+      (current / total) * 100 + "%";
   }
 
-  window.addEventListener("scroll", updateProgress, {
-    passive: true
-  });
-
+  window.addEventListener("scroll", updateProgress);
   updateProgress();
 
 
-  /* =====================================================
-     SMOOTH SECTION NAVIGATION
-  ===================================================== */
-
-  window.scrollToId = function(id) {
-
+  // Smooth navigation
+  window.scrollToId = function (id) {
     const element = document.getElementById(id);
 
-    if (!element) return;
-
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   };
 
 
-  /* =====================================================
-     10 THINGS I NEVER SAY ENOUGH
-  ===================================================== */
+  // ==========================================
+  // 10 THINGS
+  // ==========================================
 
   const things =
     document.querySelectorAll(".thing");
 
-  things.forEach((thing) => {
+  things.forEach(function (thing) {
 
-    thing.addEventListener("click", () => {
+    thing.addEventListener("click", function (event) {
 
-      const isOpen =
-        thing.classList.contains("open");
+      event.preventDefault();
 
-      /* पहले बाकी सभी बंद करो */
-      things.forEach((item) => {
+      const wasOpen =
+        this.classList.contains("open");
+
+      // Close all
+      things.forEach(function (item) {
         item.classList.remove("open");
       });
 
-      /* अगर पहले से बंद था तो इसे खोलो */
-      if (!isOpen) {
-        thing.classList.add("open");
+      // Open clicked one
+      if (!wasOpen) {
+        this.classList.add("open");
       }
 
     });
@@ -77,9 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* =====================================================
-     SECRET PASSWORD
-  ===================================================== */
+  // ==========================================
+  // SECRET PASSWORD
+  // ==========================================
 
   const input =
     document.getElementById("secretInput");
@@ -133,9 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       input.value = "";
-      input.focus();
 
-      setTimeout(() => {
+      setTimeout(function () {
 
         if (error) {
           error.classList.remove("show");
@@ -147,20 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (unlock) {
-
     unlock.addEventListener(
       "click",
       checkPassword
     );
-
   }
 
 
   if (input) {
-
     input.addEventListener(
       "keydown",
-      (event) => {
+      function (event) {
 
         if (event.key === "Enter") {
           checkPassword();
@@ -168,13 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
     );
-
   }
 
 
-  /* =====================================================
-     HEART ANIMATION
-  ===================================================== */
+  // ==========================================
+  // HEARTS
+  // ==========================================
 
   function createHearts() {
 
@@ -188,156 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
       heart.style.position = "fixed";
       heart.style.left = "50%";
       heart.style.top = "50%";
-
-      heart.style.color = "#e9b5bd";
-
-      heart.style.fontSize =
-        `${10 + Math.random() * 14}px`;
-
-      heart.style.pointerEvents = "none";
-      heart.style.zIndex = "9999";
-
-      document.body.appendChild(heart);
-
-
-      const angle =
-        Math.random() * Math.PI * 2;
-
-      const distance =
-        80 + Math.random() * 170;
-
-      const x =
-        Math.cos(angle) * distance;
-
-      const y =
-        Math.sin(angle) * distance;
-
-
-      const animation =
-        heart.animate(
-
-          [
-            {
-              transform:
-                "translate(-50%, -50%) scale(0)",
-              opacity: 0
-            },
-
-            {
-              transform:
-                "translate(-50%, -50%) scale(1)",
-              opacity: 1
-            },
-
-            {
-              transform:
-                `translate(
-                  calc(-50% + ${x}px),
-                  calc(-50% + ${y}px)
-                ) scale(.4)`,
-
-              opacity: 0
-            }
-          ],
-
-          {
-            duration:
-              1200 + Math.random() * 600,
-
-            easing:
-              "cubic-bezier(.2,.8,.2,1)"
-          }
-
-        );
-
-
-      animation.onfinish = () => {
-        heart.remove();
-      };
-
-    }
-
-  }
-
-
-  /* =====================================================
-     CONSOLE
-  ===================================================== */
-
-  console.log(
-    "%cFor SWY ❤️",
-    "font-size:22px;font-family:Georgia;color:#e9b6bd;"
-  );
-
-  console.log(
-    "%cMade with love by SWU.",
-    "font-size:13px;color:#999;"
-  );
-
-});
-      lock.textContent = "♥";
-
-      input.disabled = true;
-      unlock.disabled = true;
-
-      createHearts();
-
-    } else {
-
-      error.classList.add("show");
-
-      input.value = "";
-
-      input.focus();
-
-      setTimeout(() => {
-        error.classList.remove("show");
-      }, 2200);
-
-    }
-
-  }
-
-
-  unlock.addEventListener(
-    "click",
-    checkPassword
-  );
-
-
-  input.addEventListener(
-    "keydown",
-    (event) => {
-
-      if (event.key === "Enter") {
-        checkPassword();
-      }
-
-    }
-  );
-
-
-  /* ===============================
-     HEART ANIMATION
-  =============================== */
-
-  function createHearts() {
-
-    for (let i = 0; i < 18; i++) {
-
-      const heart =
-        document.createElement("div");
-
-      heart.textContent = "♥";
-
-      heart.style.position = "fixed";
-      heart.style.left = "50%";
-      heart.style.top = "50%";
-
       heart.style.color = "#e9b5bd";
       heart.style.fontSize =
-        `${10 + Math.random() * 14}px`;
-
+        (10 + Math.random() * 14) + "px";
       heart.style.pointerEvents = "none";
       heart.style.zIndex = "9999";
 
@@ -370,7 +207,11 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             {
               transform:
-                `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(.4)`,
+                "translate(calc(-50% + " +
+                x +
+                "px), calc(-50% + " +
+                y +
+                "px)) scale(.4)",
               opacity: 0
             }
           ],
@@ -383,47 +224,15 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         );
 
-      animation.onfinish = () => {
+      animation.onfinish = function () {
         heart.remove();
       };
 
     }
-
   }
 
 
-  /* ===============================
-     CONSOLE
-  =============================== */
-
-  console.log(
-    "%cFor SWY ♥",
-    "font-family:Georgia;font-size:24px;color:#e9b5bd;"
-  );
-
-  console.log(
-    "%cMade by SWU.",
-    "font-size:14px;color:#999;"
-  );
-
-});      showScreen(currentScreen - 1);
-    }
-
-  });
-
-
-  /* =====================================================
-     CONSOLE
-  ===================================================== */
-
-  console.log(
-    "%cFor SWY ❤️",
-    "font-size:22px;font-family:Georgia;color:#e9b6bd;"
-  );
-
-  console.log(
-    "%cMade with love by SWU.",
-    "font-size:13px;color:#999;"
-  );
+  console.log("For SWY ❤️");
+  console.log("Made with love by SWU.");
 
 });
