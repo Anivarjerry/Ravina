@@ -1,1 +1,724 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#08080c" />
+  <meta name="description" content="A little birthday universe made especially for SWY." />
+
+  <title>For SWY — A Little Universe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="stars" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Progress -->
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- =========================
+       01. OPENING
+  ========================== -->
+  <section class="screen opening active" id="opening">
+
+    <div class="opening-content">
+
+      <p class="eyebrow fade-up">A little something for you</p>
+
+      <h1 class="hero-title fade-up delay-1">
+        Hey,<br />
+        <em>SWY.</em>
+      </h1>
+
+      <p class="hero-subtitle fade-up delay-2">
+        I made a little place<br />
+        on the internet just for you.
+      </p>
+
+      <button class="primary-btn fade-up delay-3" id="enterBtn">
+        <span>Enter our story</span>
+        <span class="arrow">→</span>
+      </button>
+
+    </div>
+
+    <div class="scroll-hint">
+      <span></span>
+      <small>Something is waiting</small>
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       02. BIRTHDAY REVEAL
+  ========================== -->
+  <section class="screen birthday" id="birthday">
+
+    <div class="section-inner center">
+
+      <p class="eyebrow">29 · 08 · 1998</p>
+
+      <div class="birthday-number" id="birthdayNumber">28</div>
+
+      <p class="small-label">years of being wonderfully you</p>
+
+      <h2 class="section-title">
+        Happy Birthday,<br />
+        <em>SWY.</em>
+      </h2>
+
+      <p class="body-copy birthday-wish">
+        Wherever you are,<br />
+        whatever life brings you,<br />
+        I only wish that you stay happy. Always.
+      </p>
+
+      <div class="date-line">
+        <span></span>
+        29 August
+        <span></span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       03. OUR STORY
+  ========================== -->
+  <section class="screen story" id="story">
+
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <p class="eyebrow">Chapter 01</p>
+        <h2 class="section-title">
+          How did we<br />
+          <em>get here?</em>
+        </h2>
+      </div>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">2018</span>
+
+            <h3>The beginning</h3>
+
+            <p>
+              Somewhere around November 2018, in Sri Ganganagar,
+              two people who didn't know how important they would
+              become to each other crossed paths.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">The first conversation</span>
+
+            <h3>It started somewhere unexpected.</h3>
+
+            <p>
+              Not with some grand movie scene.
+              Just a Facebook post, a comment section,
+              and a conversation that slowly became something more.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">One funny memory</span>
+
+            <h3>The legendary party incident 😄</h3>
+
+            <p>
+              There was that little conversation about a party.
+              Someone suggested coming over to collect it,
+              and you got annoyed and basically said,
+              "Go ask them for the party."
+            </p>
+
+            <p class="muted">
+              Looking back, even your anger had a way of becoming
+              a memory worth keeping.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">Then came the feeling</span>
+
+            <h3>You just felt different.</h3>
+
+            <p>
+              My first impression was simple:
+              you seemed like a mature girl.
+              And somehow, I just liked you.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="timeline-item final-timeline">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">And today</span>
+
+            <h3>Years later...</h3>
+
+            <p>
+              We may have met only a handful of times.
+              A few cups of tea or coffee.
+              A few conversations.
+              But sometimes the number of moments
+              doesn't measure the importance of them.
+            </p>
+
+            <div class="quote-card">
+              <span class="quote-mark">“</span>
+              <p>
+                The most beautiful moment was simply
+                meeting you.
+              </p>
+              <span class="quote-mark bottom">”</span>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       04. MEMORIES
+  ========================== -->
+  <section class="screen memories" id="memories">
+
+    <div class="section-inner center">
+
+      <p class="eyebrow">Chapter 02</p>
+
+      <h2 class="section-title">
+        Some memories<br />
+        <em>need no photograph.</em>
+      </h2>
+
+      <div class="memory-orbit">
+
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+
+        <div class="memory-core">
+          <span>2018</span>
+          <strong>Us</strong>
+        </div>
+
+        <div class="floating-word word-1">tea</div>
+        <div class="floating-word word-2">coffee</div>
+        <div class="floating-word word-3">talks</div>
+        <div class="floating-word word-4">smiles</div>
+
+      </div>
+
+      <p class="body-copy">
+        We don't have hundreds of pictures.
+        We don't need them.
+      </p>
+
+      <p class="body-copy highlight-copy">
+        A few meetings.<br />
+        A few memories.<br />
+        And a feeling that stayed.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       05. THINGS I NEVER SAY ENOUGH
+  ========================== -->
+  <section class="screen things" id="things">
+
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <p class="eyebrow">Chapter 03</p>
+
+        <h2 class="section-title">
+          Things I never<br />
+          <em>say enough.</em>
+        </h2>
+
+        <p class="body-copy">
+          Maybe you already know these.<br />
+          But I wanted to say them anyway.
+        </p>
+      </div>
+
+
+      <div class="things-grid">
+
+        <button class="thing-card">
+          <span class="card-number">01</span>
+          <span class="card-title">Your anger</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            I don't know why, but even your anger has a special
+            little place in my heart.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">02</span>
+          <span class="card-title">Your nakhras</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            Those little nakhras you do?
+            Somehow, I find them ridiculously adorable.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">03</span>
+          <span class="card-title">When you get upset</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            Even when you're annoyed with me,
+            I still find myself wanting to make you smile again.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">04</span>
+          <span class="card-title">Your love</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            The way you care has a warmth that is difficult
+            to explain and even harder to forget.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">05</span>
+          <span class="card-title">Our romantic talks</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            Some conversations stay in the mind long after
+            the chat has ended.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">06</span>
+          <span class="card-title">Your maturity</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            It was one of the first things I noticed about you.
+            And somehow, it still stands out.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">07</span>
+          <span class="card-title">Your little reactions</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            Sometimes it's not what you say.
+            It's the tiny way you react that I remember.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">08</span>
+          <span class="card-title">Your presence</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            Even a short meeting with you somehow becomes
+            a memory I want to keep.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">09</span>
+          <span class="card-title">The way you are</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            There isn't always a specific reason.
+            Sometimes I simply like you because you're you.
+          </div>
+        </button>
+
+
+        <button class="thing-card">
+          <span class="card-number">10</span>
+          <span class="card-title">Just... you.</span>
+          <span class="card-hint">tap to open</span>
+
+          <div class="card-message">
+            And maybe that's the simplest answer of all.
+            I like you. I care about you. I choose you.
+          </div>
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       06. SONG / FEELINGS
+  ========================== -->
+  <section class="screen song" id="song">
+
+    <div class="section-inner center">
+
+      <p class="eyebrow">Chapter 04</p>
+
+      <div class="music-symbol">♪</div>
+
+      <h2 class="section-title">
+        Some feelings are<br />
+        <em>easier to feel than say.</em>
+      </h2>
+
+      <div class="song-card">
+
+        <div class="vinyl">
+          <div class="vinyl-center"></div>
+        </div>
+
+        <div class="song-info">
+          <span>Dedicated to you</span>
+          <strong>For SWY</strong>
+          <small>From SWU</small>
+        </div>
+
+      </div>
+
+      <p class="body-copy">
+        Maybe someday I'll sing something for you.
+        For now, just know there is a song in my heart
+        that always somehow sounds like you.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       07. LETTER
+  ========================== -->
+  <section class="screen letter" id="letter">
+
+    <div class="section-inner">
+
+      <div class="letter-paper">
+
+        <p class="letter-date">29 August 2026</p>
+
+        <p class="letter-to">Dear SWY,</p>
+
+        <div class="letter-content">
+
+          <!-- REPLACE THIS LATER WITH YOUR REAL LETTER -->
+
+          <p>
+            I don't think a website can ever properly explain
+            what someone means to you.
+          </p>
+
+          <p>
+            And maybe I don't always know how to say everything
+            that I feel either.
+          </p>
+
+          <p>
+            But today, on your birthday, I just want you to know
+            one simple thing:
+          </p>
+
+          <p class="letter-emphasis">
+            I want you to be happy.
+          </p>
+
+          <p>
+            Wherever you are.
+            Whatever happens.
+            No matter where life takes you.
+          </p>
+
+          <p>
+            And honestly...
+            at this point in my life, I don't know how to imagine
+            my days without you in them.
+          </p>
+
+          <p>
+            There is still so much I want to say,
+            so much I want to experience,
+            and so many memories I want us to make.
+          </p>
+
+          <p>
+            This isn't the complete letter.
+            Because the rest of it,
+            I think, should come directly from my heart.
+          </p>
+
+        </div>
+
+        <div class="letter-signature">
+          <span>With love,</span>
+          <strong>SWU</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       08. SECRET
+  ========================== -->
+  <section class="screen secret" id="secret">
+
+    <div class="section-inner center">
+
+      <div class="lock-icon" id="lockIcon">⌕</div>
+
+      <p class="eyebrow">Chapter 05 · Private</p>
+
+      <h2 class="section-title">
+        There is something<br />
+        <em>only you can unlock.</em>
+      </h2>
+
+      <p class="body-copy">
+        You know what you call me.<br />
+        Maybe that's enough of a clue.
+      </p>
+
+      <div class="password-box" id="passwordBox">
+
+        <input
+          type="text"
+          id="passwordInput"
+          placeholder="Enter the secret"
+          autocomplete="off"
+          spellcheck="false"
+        />
+
+        <button id="unlockBtn">Unlock</button>
+
+      </div>
+
+      <p class="error-message" id="errorMessage">
+        Hmm... that's not it. ❤️
+      </p>
+
+
+      <div class="secret-reveal" id="secretReveal">
+
+        <span class="secret-small">You found it.</span>
+
+        <h3>SWU</h3>
+
+        <p>
+          The name you call me.
+        </p>
+
+        <div class="secret-divider"></div>
+
+        <p class="secret-message">
+          Some names are just names.<br />
+          Some names become a feeling.
+        </p>
+
+        <span class="secret-heart">♥</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       09. FUTURE
+  ========================== -->
+  <section class="screen future" id="future">
+
+    <div class="section-inner center">
+
+      <p class="eyebrow">Chapter 06</p>
+
+      <h2 class="section-title">
+        Things I still want<br />
+        <em>to do with you.</em>
+      </h2>
+
+      <div class="future-list">
+
+        <div class="future-item">
+          <span>01</span>
+          <div>
+            <small>One day</small>
+            <strong>Mahadev Temple</strong>
+            <p>To stand beside you and pray for something beautiful.</p>
+          </div>
+        </div>
+
+
+        <div class="future-item">
+          <span>02</span>
+          <div>
+            <small>One day</small>
+            <strong>More time together</strong>
+            <p>Not just a few hours. Not just a few meetings.</p>
+          </div>
+        </div>
+
+
+        <div class="future-item">
+          <span>03</span>
+          <div>
+            <small>One day</small>
+            <strong>More memories</strong>
+            <p>The kind we won't need a website to remember.</p>
+          </div>
+        </div>
+
+
+        <div class="future-item">
+          <span>04</span>
+          <div>
+            <small>Maybe soon</small>
+            <strong>A birthday together</strong>
+            <p>One where I don't have to wish you from a distance.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       10. FINAL SURPRISE
+  ========================== -->
+  <section class="screen final" id="final">
+
+    <div class="final-stars"></div>
+
+    <div class="final-content">
+
+      <p class="eyebrow final-eyebrow">One last thing...</p>
+
+      <div class="final-lines">
+
+        <p class="final-line">I have one little wish.</p>
+
+        <p class="final-line">Not for today.</p>
+
+        <p class="final-line">For your next birthday.</p>
+
+        <p class="final-line big">
+          I hope by then...
+        </p>
+
+        <p class="final-line final-answer">
+          we're together.
+        </p>
+
+      </div>
+
+      <div class="final-divider"></div>
+
+      <h2 class="final-birthday">
+        Happy Birthday,<br />
+        <em>SWY.</em>
+      </h2>
+
+      <p class="final-message">
+        Wherever you go,<br />
+        whatever happens,<br />
+        please keep smiling.
+      </p>
+
+      <div class="final-signature">
+        <span>Always,</span>
+        <strong>SWU ♥</strong>
+      </div>
+
+    </div>
+
+    <button class="restart-btn" id="restartBtn">
+      ↻ Start again
+    </button>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
