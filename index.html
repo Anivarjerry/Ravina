@@ -1,416 +1,97 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#08080c" />
-  <meta name="description" content="A little birthday universe made especially for SWY." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070a">
 
-  <title>For SWY — A Little Universe</title>
+  <title>For SWY ❤️</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Background -->
-  <div class="stars" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
+  <div class="background-glow"></div>
+  <div class="stars"></div>
 
   <!-- Progress -->
-  <div class="progress">
-    <div class="progress-bar" id="progressBar"></div>
+  <div class="top-progress">
+    <div id="progress"></div>
   </div>
 
-  <!-- =========================
-       01. OPENING
-  ========================== -->
-  <section class="screen opening active" id="opening">
 
-    <div class="opening-content">
+  <!-- ================= OPENING ================= -->
 
-      <p class="eyebrow fade-up">A little something for you</p>
+  <section class="hero">
 
-      <h1 class="hero-title fade-up delay-1">
-        Hey,<br />
+    <div class="hero-inner">
+
+      <p class="eyebrow reveal">A little place on the internet</p>
+
+      <h1 class="hero-title reveal delay-1">
+        Hey,<br>
         <em>SWY.</em>
       </h1>
 
-      <p class="hero-subtitle fade-up delay-2">
-        I made a little place<br />
-        on the internet just for you.
+      <p class="hero-text reveal delay-2">
+        आज कुछ देने के लिए<br>
+        मेरे पास कोई gift box नहीं है।
       </p>
 
-      <button class="primary-btn fade-up delay-3" id="enterBtn">
-        <span>Enter our story</span>
-        <span class="arrow">→</span>
+      <p class="hero-text soft reveal delay-3">
+        इसलिए सोचा...<br>
+        तुम्हारे लिए एक छोटी-सी दुनिया बना दूँ।
+      </p>
+
+      <button class="start-btn reveal delay-4" onclick="scrollToId('birthday')">
+        <span>अंदर चलें?</span>
+        <b>↓</b>
       </button>
 
     </div>
 
-    <div class="scroll-hint">
-      <span></span>
-      <small>Something is waiting</small>
-    </div>
-
   </section>
 
 
-  <!-- =========================
-       02. BIRTHDAY REVEAL
-  ========================== -->
-  <section class="screen birthday" id="birthday">
+  <!-- ================= BIRTHDAY ================= -->
 
-    <div class="section-inner center">
+  <section class="chapter birthday" id="birthday">
 
-      <p class="eyebrow">29 · 08 · 1998</p>
+    <div class="container center">
 
-      <div class="birthday-number" id="birthdayNumber">28</div>
+      <p class="chapter-label">29 · 08 · 2026</p>
 
-      <p class="small-label">years of being wonderfully you</p>
+      <div class="age">28</div>
 
-      <h2 class="section-title">
-        Happy Birthday,<br />
+      <p class="age-label">years of being you</p>
+
+      <h2>
+        Happy Birthday,<br>
         <em>SWY.</em>
       </h2>
 
-      <p class="body-copy birthday-wish">
-        Wherever you are,<br />
-        whatever life brings you,<br />
-        I only wish that you stay happy. Always.
-      </p>
+      <div class="wish-box">
 
-      <div class="date-line">
-        <span></span>
-        29 August
-        <span></span>
-      </div>
+        <span>मेरी सबसे छोटी-सी wish</span>
 
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       03. OUR STORY
-  ========================== -->
-  <section class="screen story" id="story">
-
-    <div class="section-inner">
-
-      <div class="section-heading">
-        <p class="eyebrow">Chapter 01</p>
-        <h2 class="section-title">
-          How did we<br />
-          <em>get here?</em>
-        </h2>
-      </div>
-
-      <div class="timeline">
-
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <span class="timeline-date">2018</span>
-
-            <h3>The beginning</h3>
-
-            <p>
-              Somewhere around November 2018, in Sri Ganganagar,
-              two people who didn't know how important they would
-              become to each other crossed paths.
-            </p>
-          </div>
-        </article>
-
-
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <span class="timeline-date">The first conversation</span>
-
-            <h3>It started somewhere unexpected.</h3>
-
-            <p>
-              Not with some grand movie scene.
-              Just a Facebook post, a comment section,
-              and a conversation that slowly became something more.
-            </p>
-          </div>
-        </article>
-
-
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <span class="timeline-date">One funny memory</span>
-
-            <h3>The legendary party incident 😄</h3>
-
-            <p>
-              There was that little conversation about a party.
-              Someone suggested coming over to collect it,
-              and you got annoyed and basically said,
-              "Go ask them for the party."
-            </p>
-
-            <p class="muted">
-              Looking back, even your anger had a way of becoming
-              a memory worth keeping.
-            </p>
-          </div>
-        </article>
-
-
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <span class="timeline-date">Then came the feeling</span>
-
-            <h3>You just felt different.</h3>
-
-            <p>
-              My first impression was simple:
-              you seemed like a mature girl.
-              And somehow, I just liked you.
-            </p>
-          </div>
-        </article>
-
-
-        <article class="timeline-item final-timeline">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <span class="timeline-date">And today</span>
-
-            <h3>Years later...</h3>
-
-            <p>
-              We may have met only a handful of times.
-              A few cups of tea or coffee.
-              A few conversations.
-              But sometimes the number of moments
-              doesn't measure the importance of them.
-            </p>
-
-            <div class="quote-card">
-              <span class="quote-mark">“</span>
-              <p>
-                The most beautiful moment was simply
-                meeting you.
-              </p>
-              <span class="quote-mark bottom">”</span>
-            </div>
-
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       04. MEMORIES
-  ========================== -->
-  <section class="screen memories" id="memories">
-
-    <div class="section-inner center">
-
-      <p class="eyebrow">Chapter 02</p>
-
-      <h2 class="section-title">
-        Some memories<br />
-        <em>need no photograph.</em>
-      </h2>
-
-      <div class="memory-orbit">
-
-        <div class="orbit-ring ring-1"></div>
-        <div class="orbit-ring ring-2"></div>
-
-        <div class="memory-core">
-          <span>2018</span>
-          <strong>Us</strong>
-        </div>
-
-        <div class="floating-word word-1">tea</div>
-        <div class="floating-word word-2">coffee</div>
-        <div class="floating-word word-3">talks</div>
-        <div class="floating-word word-4">smiles</div>
-
-      </div>
-
-      <p class="body-copy">
-        We don't have hundreds of pictures.
-        We don't need them.
-      </p>
-
-      <p class="body-copy highlight-copy">
-        A few meetings.<br />
-        A few memories.<br />
-        And a feeling that stayed.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       05. THINGS I NEVER SAY ENOUGH
-  ========================== -->
-  <section class="screen things" id="things">
-
-    <div class="section-inner">
-
-      <div class="section-heading">
-        <p class="eyebrow">Chapter 03</p>
-
-        <h2 class="section-title">
-          Things I never<br />
-          <em>say enough.</em>
-        </h2>
-
-        <p class="body-copy">
-          Maybe you already know these.<br />
-          But I wanted to say them anyway.
+        <p>
+          तुम हमेशा खुश रहो।
         </p>
-      </div>
 
+        <p>
+          चाहे कहीं भी रहो,<br>
+          जिसके साथ भी रहो,<br>
+          जिस रास्ते पर भी चलो...
+        </p>
 
-      <div class="things-grid">
-
-        <button class="thing-card">
-          <span class="card-number">01</span>
-          <span class="card-title">Your anger</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            I don't know why, but even your anger has a special
-            little place in my heart.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">02</span>
-          <span class="card-title">Your nakhras</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            Those little nakhras you do?
-            Somehow, I find them ridiculously adorable.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">03</span>
-          <span class="card-title">When you get upset</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            Even when you're annoyed with me,
-            I still find myself wanting to make you smile again.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">04</span>
-          <span class="card-title">Your love</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            The way you care has a warmth that is difficult
-            to explain and even harder to forget.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">05</span>
-          <span class="card-title">Our romantic talks</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            Some conversations stay in the mind long after
-            the chat has ended.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">06</span>
-          <span class="card-title">Your maturity</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            It was one of the first things I noticed about you.
-            And somehow, it still stands out.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">07</span>
-          <span class="card-title">Your little reactions</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            Sometimes it's not what you say.
-            It's the tiny way you react that I remember.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">08</span>
-          <span class="card-title">Your presence</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            Even a short meeting with you somehow becomes
-            a memory I want to keep.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">09</span>
-          <span class="card-title">The way you are</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            There isn't always a specific reason.
-            Sometimes I simply like you because you're you.
-          </div>
-        </button>
-
-
-        <button class="thing-card">
-          <span class="card-number">10</span>
-          <span class="card-title">Just... you.</span>
-          <span class="card-hint">tap to open</span>
-
-          <div class="card-message">
-            And maybe that's the simplest answer of all.
-            I like you. I care about you. I choose you.
-          </div>
-        </button>
+        <strong>
+          बस मुस्कुराती रहो।
+        </strong>
 
       </div>
 
@@ -419,40 +100,221 @@
   </section>
 
 
-  <!-- =========================
-       06. SONG / FEELINGS
-  ========================== -->
-  <section class="screen song" id="song">
+  <!-- ================= STORY ================= -->
 
-    <div class="section-inner center">
+  <section class="chapter story">
 
-      <p class="eyebrow">Chapter 04</p>
+    <div class="container">
 
-      <div class="music-symbol">♪</div>
+      <div class="heading">
 
-      <h2 class="section-title">
-        Some feelings are<br />
-        <em>easier to feel than say.</em>
+        <p class="chapter-label">OUR STORY · 01</p>
+
+        <h2>
+          कभी-कभी कहानी<br>
+          <em>बहुत छोटी शुरुआत</em><br>
+          से होती है।
+        </h2>
+
+      </div>
+
+
+      <div class="story-line">
+
+        <article class="story-point">
+
+          <span class="story-year">2018 · SRI GANGANAGAR</span>
+
+          <h3>
+            शायद 11 या 12 नवंबर...
+          </h3>
+
+          <p>
+            तारीख आज भी पूरी तरह याद नहीं है।
+            लेकिन इतना याद है कि लगभग 2018 में
+            श्री गंगानगर शहर में हमारी कहानी ने
+            कहीं से अपना पहला पन्ना खोल दिया था।
+          </p>
+
+        </article>
+
+
+        <article class="story-point">
+
+          <span class="story-year">BEFORE THE FEELINGS</span>
+
+          <h3>
+            शुरुआत Facebook के एक comment section से हुई।
+          </h3>
+
+          <p>
+            कोई बड़ी cinematic शुरुआत नहीं थी।
+            न कोई फिल्मी scene...
+            बस किसी और की post के comment section में
+            शुरू हुई एक छोटी-सी बातचीत।
+          </p>
+
+          <p>
+            और शायद उस समय हम दोनों को पता भी नहीं था
+            कि ये छोटी-सी बातचीत इतनी दूर तक जाएगी।
+          </p>
+
+        </article>
+
+
+        <article class="story-point">
+
+          <span class="story-year">THE PARTY INCIDENT 😄</span>
+
+          <h3>
+            फिर आया वो famous वाला moment...
+          </h3>
+
+          <div class="memory-card">
+
+            <p>
+              तुम्हारी बहन से किसी बात पर party माँगी थी।
+            </p>
+
+            <p>
+              उन्होंने कहा —
+              <em>“आ जाइए, party ले लीजिए।”</em>
+            </p>
+
+            <p>
+              और तुम्हारा reaction कुछ ऐसा था कि...
+            </p>
+
+            <strong>
+              “उन्हीं से माँग लो party,
+              जाओ उन्हीं से बात करो।” 😄
+            </strong>
+
+          </div>
+
+          <p class="small-note">
+            उस वक्त शायद ये बस एक छोटी-सी बात थी।
+            आज वही एक प्यारी memory है।
+          </p>
+
+        </article>
+
+
+        <article class="story-point">
+
+          <span class="story-year">MY FIRST IMPRESSION</span>
+
+          <h3>
+            “ये लड़की थोड़ी अलग है...”
+          </h3>
+
+          <p>
+            मेरी पहली feeling बहुत complicated नहीं थी।
+          </p>
+
+          <p class="big-quote">
+            “तुम अच्छी लगीं।”
+          </p>
+
+          <p>
+            और तुम्हारे अंदर जो maturity थी,
+            वो उन पहली चीजों में से थी
+            जो मुझे तुम्हारे बारे में पसंद आई।
+          </p>
+
+        </article>
+
+
+        <article class="story-point">
+
+          <span class="story-year">THEN & NOW</span>
+
+          <h3>
+            बहुत ज्यादा moments नहीं थे।
+          </h3>
+
+          <p>
+            हम शायद सिर्फ तीन-चार बार मिले।
+            थोड़ी चाय-कॉफी,
+            थोड़ी बातें,
+            थोड़ा साथ बैठना...
+          </p>
+
+          <p>
+            लेकिन अजीब बात है ना?
+            कभी-कभी किसी इंसान के साथ बिताया
+            थोड़ा-सा वक्त भी बहुत ज्यादा याद रह जाता है।
+          </p>
+
+        </article>
+
+
+        <article class="story-point last">
+
+          <span class="story-year">THE MOST BEAUTIFUL MEMORY</span>
+
+          <h3>
+            हमारी सबसे खूबसूरत memory?
+          </h3>
+
+          <p class="big-quote">
+            बस... हमारा मिलना।
+          </p>
+
+          <p>
+            शायद इसमें कोई बड़ी घटना नहीं थी।
+            लेकिन मेरे लिए वही काफी था।
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MEMORIES ================= -->
+
+  <section class="chapter memories">
+
+    <div class="container center">
+
+      <p class="chapter-label">OUR MEMORIES · 02</p>
+
+      <h2>
+        कुछ यादों को<br>
+        <em>photo की जरूरत नहीं होती।</em>
       </h2>
 
-      <div class="song-card">
+      <div class="memory-circle">
 
-        <div class="vinyl">
-          <div class="vinyl-center"></div>
-        </div>
+        <div class="circle-word one">TEA</div>
+        <div class="circle-word two">COFFEE</div>
+        <div class="circle-word three">TALKS</div>
+        <div class="circle-word four">SMILES</div>
 
-        <div class="song-info">
-          <span>Dedicated to you</span>
-          <strong>For SWY</strong>
-          <small>From SWU</small>
+        <div class="circle-center">
+          <small>since</small>
+          <strong>2018</strong>
         </div>
 
       </div>
 
-      <p class="body-copy">
-        Maybe someday I'll sing something for you.
-        For now, just know there is a song in my heart
-        that always somehow sounds like you.
+      <p class="memory-text">
+        हमारे पास बहुत सारी photos नहीं हैं।
+        और शायद जरूरत भी नहीं है।
+      </p>
+
+      <p class="memory-text highlighted">
+        कुछ मुलाकातें,<br>
+        कुछ बातें,<br>
+        और एक feeling...
+      </p>
+
+      <p class="memory-text">
+        जो इतने साल बाद भी यहाँ है।
       </p>
 
     </div>
@@ -460,71 +322,266 @@
   </section>
 
 
-  <!-- =========================
-       07. LETTER
-  ========================== -->
-  <section class="screen letter" id="letter">
+  <!-- ================= 10 THINGS ================= -->
 
-    <div class="section-inner">
+  <section class="chapter things">
+
+    <div class="container">
+
+      <div class="heading">
+
+        <p class="chapter-label">THINGS I NEVER SAY ENOUGH · 03</p>
+
+        <h2>
+          तुम्हारे बारे में<br>
+          <em>10 बातें।</em>
+        </h2>
+
+        <p>
+          एक-एक करके खोलना। ❤️
+        </p>
+
+      </div>
+
+
+      <div class="things-list">
+
+        <button class="thing">
+          <span>01</span>
+          <strong>तुम्हारा गुस्सा</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            पता नहीं क्यों...
+            लेकिन तुम्हारा गुस्सा भी मुझे अपना-सा लगता है।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>02</span>
+          <strong>तुम्हारे नखरे</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            तुम्हारे छोटे-छोटे नखरे भी
+            somehow बहुत प्यारे लगते हैं।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>03</span>
+          <strong>तुम्हारा नाराज़ होना</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            क्योंकि फिर मन करता है कि
+            किसी तरह तुम्हें वापस हँसा दूँ।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>04</span>
+          <strong>तुम्हारा प्यार</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            तुम्हारे प्यार में जो अपनापन है,
+            वो मेरे लिए बहुत मायने रखता है।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>05</span>
+          <strong>हमारी romantic बातें</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            कुछ conversations खत्म होने के बाद भी
+            काफी देर तक दिल में चलती रहती हैं।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>06</span>
+          <strong>तुम्हारी maturity</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            ये उन पहली चीजों में से एक थी
+            जिसने मुझे तुम्हारी तरफ खींचा।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>07</span>
+          <strong>तुम्हारा अंदाज़</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            तुम जिस तरह से अपनी बात कहती हो,
+            उसमें तुम्हारी अपनी एक अलग पहचान है।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>08</span>
+          <strong>तुम्हारी छोटी reactions</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            कभी-कभी तुम्हारे शब्दों से ज्यादा
+            तुम्हारी छोटी-सी reaction याद रहती है।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>09</span>
+          <strong>तुम्हारा होना</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            तुम्हारे साथ बिताया थोड़ा-सा वक्त भी
+            मेरे लिए बाकी बहुत चीजों से ज्यादा खास है।
+          </div>
+        </button>
+
+
+        <button class="thing">
+          <span>10</span>
+          <strong>बस तुम...</strong>
+          <i>+</i>
+
+          <div class="thing-answer">
+            हर चीज का कोई reason नहीं होता।
+            शायद तुम्हें पसंद करने का मेरा सबसे बड़ा reason...
+            बस तुम हो।
+          </div>
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FEELING ================= -->
+
+  <section class="chapter feeling">
+
+    <div class="container center">
+
+      <p class="chapter-label">A FEELING · 04</p>
+
+      <div class="music-note">♪</div>
+
+      <h2>
+        कुछ feelings<br>
+        <em>कही नहीं जातीं।</em>
+      </h2>
+
+      <div class="dedication">
+
+        <span>THIS ONE IS FOR</span>
+
+        <strong>SWY</strong>
+
+        <small>from SWU</small>
+
+      </div>
+
+      <p>
+        कभी तुम्हारे लिए अपनी आवाज़ में
+        कुछ गाने का मन हुआ तो जरूर गाऊँगा।
+      </p>
+
+      <p>
+        आज के लिए इतना समझ लो...
+      </p>
+
+      <p class="big-quote">
+        कुछ गाने सुनते हुए<br>
+        तुम्हारी याद आ जाती है।
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= LETTER ================= -->
+
+  <section class="chapter letter">
+
+    <div class="container">
 
       <div class="letter-paper">
 
         <p class="letter-date">29 August 2026</p>
 
-        <p class="letter-to">Dear SWY,</p>
+        <p class="letter-to">
+          Dear SWY,
+        </p>
 
-        <div class="letter-content">
-
-          <!-- REPLACE THIS LATER WITH YOUR REAL LETTER -->
+        <div class="letter-body">
 
           <p>
-            I don't think a website can ever properly explain
-            what someone means to you.
+            शायद कोई website किसी इंसान के लिए
+            महसूस होने वाली सारी चीजें नहीं बता सकती।
           </p>
 
           <p>
-            And maybe I don't always know how to say everything
-            that I feel either.
+            और शायद मैं भी हमेशा वो सब नहीं कह पाता
+            जो मेरे अंदर होता है।
           </p>
 
           <p>
-            But today, on your birthday, I just want you to know
-            one simple thing:
+            लेकिन आज तुम्हारे birthday पर
+            एक बात जरूर कहना चाहता हूँ।
           </p>
 
-          <p class="letter-emphasis">
-            I want you to be happy.
-          </p>
-
-          <p>
-            Wherever you are.
-            Whatever happens.
-            No matter where life takes you.
+          <p class="letter-highlight">
+            मैं बस चाहता हूँ कि तुम हमेशा खुश रहो।
           </p>
 
           <p>
-            And honestly...
-            at this point in my life, I don't know how to imagine
-            my days without you in them.
+            चाहे तुम कहीं भी रहो,
+            जिंदगी तुम्हें जहाँ भी ले जाए,
+            और तुम्हारे साथ कोई भी हो...
           </p>
 
           <p>
-            There is still so much I want to say,
-            so much I want to experience,
-            and so many memories I want us to make.
+            तुम्हारे चेहरे की smile कभी कम न हो।
           </p>
 
           <p>
-            This isn't the complete letter.
-            Because the rest of it,
-            I think, should come directly from my heart.
+            और सच कहूँ तो,
+            फिलहाल के वक्त में
+            तुम्हारे बिना रहना मेरे लिए आसान नहीं है।
+          </p>
+
+          <p>
+            अभी इस letter में बहुत कुछ बाकी है।
+          </p>
+
+          <p class="letter-highlight">
+            बाकी बातें मैं तुम्हें
+            अपने शब्दों में बताऊँगा...
           </p>
 
         </div>
 
-        <div class="letter-signature">
-          <span>With love,</span>
-          <strong>SWU</strong>
+        <div class="signature">
+          <span>Always,</span>
+          <strong>SWU ❤️</strong>
         </div>
 
       </div>
@@ -534,64 +591,69 @@
   </section>
 
 
-  <!-- =========================
-       08. SECRET
-  ========================== -->
-  <section class="screen secret" id="secret">
+  <!-- ================= SECRET ================= -->
 
-    <div class="section-inner center">
+  <section class="chapter secret">
 
-      <div class="lock-icon" id="lockIcon">⌕</div>
+    <div class="container center">
 
-      <p class="eyebrow">Chapter 05 · Private</p>
+      <div class="secret-lock" id="lock">
+        🔒
+      </div>
 
-      <h2 class="section-title">
-        There is something<br />
-        <em>only you can unlock.</em>
+      <p class="chapter-label">PRIVATE · 05</p>
+
+      <h2>
+        एक चीज है<br>
+        जो शायद <em>तुम ही खोल सकती हो।</em>
       </h2>
 
-      <p class="body-copy">
-        You know what you call me.<br />
-        Maybe that's enough of a clue.
+      <p>
+        Hint बहुत आसान है।
       </p>
 
-      <div class="password-box" id="passwordBox">
+      <div class="hint">
+        “तुम मुझे किस नाम से बुलाती हो?”
+      </div>
+
+      <div class="password">
 
         <input
+          id="secretInput"
           type="text"
-          id="passwordInput"
-          placeholder="Enter the secret"
+          placeholder="Secret name..."
           autocomplete="off"
-          spellcheck="false"
-        />
+        >
 
-        <button id="unlockBtn">Unlock</button>
+        <button id="unlock">
+          खोलो
+        </button>
 
       </div>
 
-      <p class="error-message" id="errorMessage">
-        Hmm... that's not it. ❤️
+      <p id="error" class="error">
+        Hmm... फिर से सोचो ❤️
       </p>
 
+      <div id="secretResult" class="secret-result">
 
-      <div class="secret-reveal" id="secretReveal">
+        <span>You found it.</span>
 
-        <span class="secret-small">You found it.</span>
-
-        <h3>SWU</h3>
+        <strong>SWU</strong>
 
         <p>
-          The name you call me.
+          वो नाम जिससे तुम मुझे बुलाती हो।
         </p>
 
-        <div class="secret-divider"></div>
+        <div></div>
 
-        <p class="secret-message">
-          Some names are just names.<br />
-          Some names become a feeling.
+        <p>
+          कुछ नाम सिर्फ नाम नहीं रहते।
+          <br>
+          वो किसी इंसान की आवाज़ बन जाते हैं।
         </p>
 
-        <span class="secret-heart">♥</span>
+        <b>♥</b>
 
       </div>
 
@@ -600,59 +662,91 @@
   </section>
 
 
-  <!-- =========================
-       09. FUTURE
-  ========================== -->
-  <section class="screen future" id="future">
+  <!-- ================= FUTURE ================= -->
 
-    <div class="section-inner center">
+  <section class="chapter future">
 
-      <p class="eyebrow">Chapter 06</p>
+    <div class="container center">
 
-      <h2 class="section-title">
-        Things I still want<br />
-        <em>to do with you.</em>
+      <p class="chapter-label">SOMEDAY · 06</p>
+
+      <h2>
+        अभी कहानी में<br>
+        <em>कुछ पन्ने बाकी हैं।</em>
       </h2>
 
-      <div class="future-list">
 
-        <div class="future-item">
+      <div class="future-cards">
+
+        <div class="future-card">
+
           <span>01</span>
-          <div>
-            <small>One day</small>
-            <strong>Mahadev Temple</strong>
-            <p>To stand beside you and pray for something beautiful.</p>
-          </div>
+
+          <small>ONE DAY</small>
+
+          <h3>
+            Mahadev Temple
+          </h3>
+
+          <p>
+            साथ में महादेव के मंदिर जाना है।
+            एक साथ खड़े होकर कुछ माँगना है।
+          </p>
+
         </div>
 
 
-        <div class="future-item">
+        <div class="future-card">
+
           <span>02</span>
-          <div>
-            <small>One day</small>
-            <strong>More time together</strong>
-            <p>Not just a few hours. Not just a few meetings.</p>
-          </div>
+
+          <small>ONE DAY</small>
+
+          <h3>
+            More moments
+          </h3>
+
+          <p>
+            सिर्फ तीन-चार मुलाकातें नहीं।
+            जिंदगी में बहुत सारे ordinary days चाहिए।
+          </p>
+
         </div>
 
 
-        <div class="future-item">
+        <div class="future-card">
+
           <span>03</span>
-          <div>
-            <small>One day</small>
-            <strong>More memories</strong>
-            <p>The kind we won't need a website to remember.</p>
-          </div>
+
+          <small>ONE DAY</small>
+
+          <h3>
+            More memories
+          </h3>
+
+          <p>
+            ऐसी memories बनानी हैं
+            जिन्हें याद करने के लिए किसी website की जरूरत न पड़े।
+          </p>
+
         </div>
 
 
-        <div class="future-item">
+        <div class="future-card">
+
           <span>04</span>
-          <div>
-            <small>Maybe soon</small>
-            <strong>A birthday together</strong>
-            <p>One where I don't have to wish you from a distance.</p>
-          </div>
+
+          <small>MY LITTLE WISH</small>
+
+          <h3>
+            Next Birthday
+          </h3>
+
+          <p>
+            अगली बार birthday wish करते वक्त
+            दूरी नहीं होनी चाहिए।
+          </p>
+
         </div>
 
       </div>
@@ -662,58 +756,68 @@
   </section>
 
 
-  <!-- =========================
-       10. FINAL SURPRISE
-  ========================== -->
-  <section class="screen final" id="final">
+  <!-- ================= FINAL ================= -->
 
-    <div class="final-stars"></div>
+  <section class="final">
+
+    <div class="final-glow"></div>
 
     <div class="final-content">
 
-      <p class="eyebrow final-eyebrow">One last thing...</p>
+      <p class="chapter-label">ONE LAST THING</p>
 
-      <div class="final-lines">
+      <p class="final-line">
+        मेरी एक छोटी-सी इच्छा है।
+      </p>
 
-        <p class="final-line">I have one little wish.</p>
+      <p class="final-line">
+        आज के लिए नहीं...
+      </p>
 
-        <p class="final-line">Not for today.</p>
+      <p class="final-line">
+        तुम्हारे अगले birthday के लिए।
+      </p>
 
-        <p class="final-line">For your next birthday.</p>
+      <div class="final-space"></div>
 
-        <p class="final-line big">
-          I hope by then...
-        </p>
+      <p class="final-line">
+        कोशिश है...
+      </p>
 
-        <p class="final-line final-answer">
-          we're together.
-        </p>
+      <h2>
+        कि अगले birthday से पहले...
+      </h2>
 
+      <div class="final-answer">
+        हम एक हो जाएँ।
+      </div>
+
+      <div class="final-line-small">
+        ❤️
       </div>
 
       <div class="final-divider"></div>
 
-      <h2 class="final-birthday">
-        Happy Birthday,<br />
+      <h3>
+        Happy Birthday,<br>
         <em>SWY.</em>
-      </h2>
+      </h3>
 
-      <p class="final-message">
-        Wherever you go,<br />
-        whatever happens,<br />
-        please keep smiling.
+      <p class="final-wish">
+        जहाँ भी रहो,<br>
+        जैसी भी रहो,<br>
+        हमेशा खुश रहना।
       </p>
 
-      <div class="final-signature">
-        <span>Always,</span>
-        <strong>SWU ♥</strong>
+      <div class="final-sign">
+        SWU
       </div>
 
-    </div>
+      <button class="restart" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        ↻ फिर से शुरू करें
+      </button>
 
-    <button class="restart-btn" id="restartBtn">
-      ↻ Start again
-    </button>
+    </div>
 
   </section>
 
