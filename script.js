@@ -1,147 +1,72 @@
-
-/* =====================================================
-   SWY BIRTHDAY WEBSITE
-   Pure JavaScript — No dependencies
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  const screens = [...document.querySelectorAll(".screen")];
-  const progressBar = document.getElementById("progressBar");
+  /* ===============================
+     PROGRESS BAR
+  =============================== */
 
-  let currentScreen = 0;
+  const progress = document.getElementById("progress");
+
+  function updateProgress() {
+
+    const scrollTop = window.scrollY;
+
+    const documentHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    if (documentHeight <= 0) return;
+
+    const percentage =
+      (scrollTop / documentHeight) * 100;
+
+    progress.style.width = `${percentage}%`;
+  }
+
+  window.addEventListener("scroll", updateProgress, {
+    passive: true
+  });
+
+  updateProgress();
 
 
-  /* =====================================================
-     SCREEN NAVIGATION
-  ===================================================== */
+  /* ===============================
+     SMOOTH SECTION NAVIGATION
+  =============================== */
 
-  function showScreen(index) {
+  window.scrollToId = function(id) {
 
-    if (index < 0) index = 0;
-    if (index >= screens.length) index = screens.length - 1;
+    const element = document.getElementById(id);
 
-    currentScreen = index;
+    if (!element) return;
 
-    screens.forEach((screen, i) => {
-      screen.classList.toggle("active", i === index);
-    });
-
-    screens[index].scrollIntoView({
+    element.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
 
-    updateProgress();
-  }
+  };
 
 
-  function nextScreen() {
-    showScreen(currentScreen + 1);
-  }
+  /* ===============================
+     10 THINGS
+  =============================== */
 
+  const things =
+    document.querySelectorAll(".thing");
 
-  function updateProgress() {
+  things.forEach((thing) => {
 
-    const percentage =
-      (currentScreen / (screens.length - 1)) * 100;
+    thing.addEventListener("click", () => {
 
-    progressBar.style.width = `${percentage}%`;
-  }
+      const isOpen =
+        thing.classList.contains("open");
 
-
-  /* =====================================================
-     OPENING BUTTON
-  ===================================================== */
-
-  const enterBtn = document.getElementById("enterBtn");
-
-  enterBtn.addEventListener("click", () => {
-    nextScreen();
-  });
-
-
-  /* =====================================================
-     SWIPE / WHEEL FRIENDLY NAVIGATION
-  ===================================================== */
-
-  let wheelLocked = false;
-
-  window.addEventListener(
-    "wheel",
-    (event) => {
-
-      if (window.innerWidth > 700) {
-
-        if (wheelLocked) return;
-
-        wheelLocked = true;
-
-        if (event.deltaY > 20) {
-          nextScreen();
-        }
-
-        if (event.deltaY < -20) {
-          showScreen(currentScreen - 1);
-        }
-
-        setTimeout(() => {
-          wheelLocked = false;
-        }, 900);
-      }
-
-    },
-    { passive: true }
-  );
-
-
-  /* =====================================================
-     TOUCH SWIPE
-  ===================================================== */
-
-  let touchStartY = 0;
-  let touchEndY = 0;
-
-  document.addEventListener("touchstart", (event) => {
-    touchStartY = event.changedTouches[0].screenY;
-  }, { passive: true });
-
-
-  document.addEventListener("touchend", (event) => {
-
-    touchEndY = event.changedTouches[0].screenY;
-
-    const difference = touchStartY - touchEndY;
-
-    if (Math.abs(difference) < 70) return;
-
-    if (difference > 0) {
-      nextScreen();
-    } else {
-      showScreen(currentScreen - 1);
-    }
-
-  }, { passive: true });
-
-
-  /* =====================================================
-     THINGS I NEVER SAY ENOUGH
-  ===================================================== */
-
-  const cards = document.querySelectorAll(".thing-card");
-
-  cards.forEach((card) => {
-
-    card.addEventListener("click", () => {
-
-      const alreadyOpen = card.classList.contains("open");
-
-      cards.forEach((item) => {
+      things.forEach((item) => {
         item.classList.remove("open");
       });
 
-      if (!alreadyOpen) {
-        card.classList.add("open");
+      if (!isOpen) {
+        thing.classList.add("open");
       }
 
     });
@@ -149,101 +74,102 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* =====================================================
-     SECRET PASSWORD
-  ===================================================== */
+  /* ===============================
+     SECRET
+  =============================== */
 
-  const passwordInput =
-    document.getElementById("passwordInput");
+  const input =
+    document.getElementById("secretInput");
 
-  const unlockBtn =
-    document.getElementById("unlockBtn");
+  const unlock =
+    document.getElementById("unlock");
 
-  const errorMessage =
-    document.getElementById("errorMessage");
+  const result =
+    document.getElementById("secretResult");
 
-  const secretReveal =
-    document.getElementById("secretReveal");
+  const error =
+    document.getElementById("error");
 
-  const lockIcon =
-    document.getElementById("lockIcon");
+  const lock =
+    document.getElementById("lock");
 
 
-  function unlockSecret() {
+  function checkPassword() {
 
     const value =
-      passwordInput.value.trim().toLowerCase();
-
-    /*
-      Secret password:
-      SWU
-
-      Also accepting lowercase/uppercase because
-      the input is converted to lowercase.
-    */
+      input.value.trim().toLowerCase();
 
     if (value === "swu") {
 
-      errorMessage.classList.remove("show");
+      error.classList.remove("show");
 
-      passwordInput.disabled = true;
-      unlockBtn.disabled = true;
+      result.classList.add("show");
 
-      passwordInput.style.opacity = "0.4";
-      unlockBtn.style.opacity = "0.4";
+      lock.textContent = "♥";
 
-      lockIcon.textContent = "♥";
+      input.disabled = true;
+      unlock.disabled = true;
 
-      secretReveal.classList.add("show");
-
-      createHeartBurst();
+      createHearts();
 
     } else {
 
-      errorMessage.classList.add("show");
+      error.classList.add("show");
 
-      passwordInput.value = "";
+      input.value = "";
 
-      passwordInput.focus();
+      input.focus();
 
       setTimeout(() => {
-        errorMessage.classList.remove("show");
-      }, 2500);
+        error.classList.remove("show");
+      }, 2200);
+
     }
 
   }
 
 
-  unlockBtn.addEventListener("click", unlockSecret);
+  unlock.addEventListener(
+    "click",
+    checkPassword
+  );
 
-  passwordInput.addEventListener("keydown", (event) => {
 
-    if (event.key === "Enter") {
-      unlockSecret();
+  input.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (event.key === "Enter") {
+        checkPassword();
+      }
+
     }
+  );
 
-  });
 
+  /* ===============================
+     HEART ANIMATION
+  =============================== */
 
-  /* =====================================================
-     HEART BURST
-  ===================================================== */
+  function createHearts() {
 
-  function createHeartBurst() {
+    for (let i = 0; i < 18; i++) {
 
-    for (let i = 0; i < 14; i++) {
-
-      const heart = document.createElement("div");
+      const heart =
+        document.createElement("div");
 
       heart.textContent = "♥";
 
       heart.style.position = "fixed";
       heart.style.left = "50%";
       heart.style.top = "50%";
-      heart.style.zIndex = "999";
+
+      heart.style.color = "#e9b5bd";
+      heart.style.fontSize =
+        `${10 + Math.random() * 14}px`;
+
       heart.style.pointerEvents = "none";
-      heart.style.color = "#e9b6bd";
-      heart.style.fontSize = `${10 + Math.random() * 14}px`;
+      heart.style.zIndex = "9999";
 
       document.body.appendChild(heart);
 
@@ -251,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Math.random() * Math.PI * 2;
 
       const distance =
-        80 + Math.random() * 180;
+        80 + Math.random() * 170;
 
       const x =
         Math.cos(angle) * distance;
@@ -259,27 +185,35 @@ document.addEventListener("DOMContentLoaded", () => {
       const y =
         Math.sin(angle) * distance;
 
-      heart.animate(
-        [
+      const animation =
+        heart.animate(
+          [
+            {
+              transform:
+                "translate(-50%, -50%) scale(0)",
+              opacity: 0
+            },
+            {
+              transform:
+                "translate(-50%, -50%) scale(1)",
+              opacity: 1
+            },
+            {
+              transform:
+                `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(.4)`,
+              opacity: 0
+            }
+          ],
           {
-            transform: "translate(-50%, -50%) scale(0)",
-            opacity: 0
-          },
-          {
-            transform: "translate(-50%, -50%) scale(1)",
-            opacity: 1
-          },
-          {
-            transform:
-              `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(.5)`,
-            opacity: 0
+            duration:
+              1200 + Math.random() * 600,
+
+            easing:
+              "cubic-bezier(.2,.8,.2,1)"
           }
-        ],
-        {
-          duration: 1300 + Math.random() * 500,
-          easing: "cubic-bezier(.2,.8,.2,1)"
-        }
-      ).onfinish = () => {
+        );
+
+      animation.onfinish = () => {
         heart.remove();
       };
 
@@ -288,61 +222,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =====================================================
-     PROGRESS BASED ON CURRENT SCREEN
-  ===================================================== */
+  /* ===============================
+     CONSOLE
+  =============================== */
 
-  updateProgress();
+  console.log(
+    "%cFor SWY ♥",
+    "font-family:Georgia;font-size:24px;color:#e9b5bd;"
+  );
 
+  console.log(
+    "%cMade by SWU.",
+    "font-size:14px;color:#999;"
+  );
 
-  /* =====================================================
-     RESTART
-  ===================================================== */
-
-  const restartBtn =
-    document.getElementById("restartBtn");
-
-  restartBtn.addEventListener("click", () => {
-
-    secretReveal.classList.remove("show");
-
-    passwordInput.disabled = false;
-    unlockBtn.disabled = false;
-
-    passwordInput.style.opacity = "1";
-    unlockBtn.style.opacity = "1";
-
-    passwordInput.value = "";
-
-    lockIcon.textContent = "⌕";
-
-    cards.forEach((card) => {
-      card.classList.remove("open");
-    });
-
-    showScreen(0);
-
-  });
-
-
-  /* =====================================================
-     KEYBOARD NAVIGATION
-  ===================================================== */
-
-  document.addEventListener("keydown", (event) => {
-
-    if (
-      event.key === "ArrowDown" ||
-      event.key === "PageDown"
-    ) {
-      nextScreen();
-    }
-
-    if (
-      event.key === "ArrowUp" ||
-      event.key === "PageUp"
-    ) {
-      showScreen(currentScreen - 1);
+});      showScreen(currentScreen - 1);
     }
 
   });
